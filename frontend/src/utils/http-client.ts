@@ -1,4 +1,3 @@
-
 type RequestConfig = {
     url: string
     method: string
@@ -10,16 +9,15 @@ export const get = async <T>(
     port: number,
     uri: string
 ): Promise<T> => {
-    const url = `http://${hostname}:${port}/${uri}`;2
-    return clientFetch(url,null, 'GET')
+    const url = `http://${hostname}:${port}/${uri}`;
+    return clientFetch(url, null, 'GET')
 };
 
-let headers = new Headers([['Content-Type', 'application/json']]);
+const headers = new Headers([['Content-Type', 'application/json']]);
 
 const setHeaders = (_headers: Headers) => {
     _headers.forEach((k: string, v: string) => headers.set(k, v))
 };
-
 
 
 const handleErrors = (res: any) => {
@@ -35,9 +33,9 @@ const clientFetch = async <T>(
     method: 'POST' | 'GET',
 ): Promise<T> => {
     const request: RequestConfig = {
-        url: url,
-        method: method,
-        headers: headers,
+        url,
+        method,
+        headers,
     };
 
     return new Promise((resolve, reject) =>

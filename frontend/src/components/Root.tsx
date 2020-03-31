@@ -1,5 +1,7 @@
 import * as React from 'react'
 import {get} from '../utils/http-client'
+import {Button} from "./common/Button";
+
 
 export default class Root extends React.Component {
     state = {
@@ -13,9 +15,7 @@ export default class Root extends React.Component {
 
     render() {
         return <div>
-            <button onClick={this.showMessage}>
-                Click me!
-            </button>
+            <Button onClick={this.showMessage} style={{color: "red"}} value="Click me!"/>
             <h1>{this.state.message}</h1>
         </div>
     }
