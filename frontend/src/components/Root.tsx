@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {get} from './http-client'
+import {get} from '../utils/http-client'
 
 export default class Root extends React.Component {
     state = {
