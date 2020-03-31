@@ -10,15 +10,15 @@ export const get = async <T>(
     port: number,
     uri: string
 ): Promise<T> => {
-    const url = `http://${hostname}:${port}/${uri}`
+    const url = `http://${hostname}:${port}/${uri}`;2
     return clientFetch(url,null, 'GET')
-}
+};
 
-let headers = new Headers([['Content-Type', 'application/json']])
+let headers = new Headers([['Content-Type', 'application/json']]);
 
 const setHeaders = (_headers: Headers) => {
     _headers.forEach((k: string, v: string) => headers.set(k, v))
-}
+};
 
 
 
@@ -27,7 +27,7 @@ const handleErrors = (res: any) => {
         throw new Error(res.statusText)
     }
     return res
-}
+};
 
 const clientFetch = async <T>(
     url: string,
@@ -38,7 +38,7 @@ const clientFetch = async <T>(
         url: url,
         method: method,
         headers: headers,
-    }
+    };
 
     return new Promise((resolve, reject) =>
         fetch(url, request)
@@ -46,4 +46,4 @@ const clientFetch = async <T>(
             .then(async response => resolve(await response.json()))
             .catch(e => reject(new Error(e.message))),
     )
-}
+};
