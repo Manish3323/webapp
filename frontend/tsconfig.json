@@ -8,8 +8,9 @@
     "target": "es6",
     "jsx": "react",
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "lib": ["DOM", "DOM.Iterable", "ES2015"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "__test__/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
