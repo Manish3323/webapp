@@ -5,7 +5,7 @@ import {Button} from "../../../src/components/common/Button";
 
 test('loads and displays greeting', async () => {
 
-    let getMock = jest.fn(() => Promise.resolve("Message from akka"));
+    const getMock = jest.fn(() => Promise.resolve("Message from akka"));
 
     render(<Button value={"Click me!"} style={{color:"red"}} onClick={getMock}/>)
 
