@@ -4,7 +4,7 @@ import { Button } from './common/Button'
 
 export default class Root extends React.Component {
   state = {
-           message: '',
+    message: '',
   }
   showMessage = () => {
     get('localhost', 8080, 'hello').then((result: { message: string }) => {
